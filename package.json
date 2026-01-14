@@ -1,0 +1,15 @@
+{
+  "name": "mt-team-website",
+  "version": "1.0.0",
+  "description": "MT Team Front-End Specialists Website",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16"
+  },
+  "author": "MT Team",
+  "license": "MIT"
+}

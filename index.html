@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Team | Front-End Specialists</title>
+        <link rel="stylesheet" href="src\input.css">
+
+    <meta name="description" content="MT Team specializes in high-performance front-end development, creating modern web experiences with clean code and pixel-perfect execution. Based in Morocco.">
+    <meta name="keywords" content="front-end development, web development, React, JavaScript, HTML5, CSS3, modern UI, Morocco, web design, SPA">
+    <meta name="author" content="MT Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mt-team.com">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mt-team.com">
+    <meta property="og:title" content="MT Team | Front-End Specialists">
+    <meta property="og:description" content="Specialized in high-performance Front-End experiences. Clean code, instant speeds, and pixel-perfect execution.">
+    <meta property="og:image" content="IMG.webp">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mt-team.com">
+    <meta property="twitter:title" content="MT Team | Front-End Specialists">
+    <meta property="twitter:description" content="Specialized in high-performance Front-End experiences. Clean code, instant speeds, and pixel-perfect execution.">
+    <meta property="twitter:image" content="IMG.webp">
+
+    
+    <link rel="icon" type="image/png" href="IMG.webp">
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MT Team",
+      "url": "https://mt-team.com",
+      "logo": "IMG.webp",
+      "description": "Front-End Specialists providing modern web development services",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Morocco"
+      },
+      "sameAs": [
+        "https://www.instagram.com/mt__team_/",
+        "https://wa.me/212635469650"
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="IMG.webp">
+    <link href="./build.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <style>
+        /* By MT Team */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: white;
+            overflow-x: hidden;
+
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+        }
+
+        @keyframes floatIn {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.95);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotate(-5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0deg);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px) rotate(5deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0deg);
+            }
+        }
+
+        @keyframes morphIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotate(10deg);
+                border-radius: 50%;
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+                border-radius: 20px;
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(37, 99, 235, 0.6);
+            }
+        }
+
+        .animate-float-in {
+            animation: floatIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .animate-slide-left {
+            animation: slideInLeft 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .animate-slide-right {
+            animation: slideInRight 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .animate-morph {
+            animation: morphIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .animate-glow {
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+
+        .group:hover .group-icon {
+            transform: scale(1.2) rotate(5deg);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .group-icon {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+
+        @keyframes scrollIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85) rotate(-8deg) translateX(-60px);
+                filter: blur(8px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg) translateX(0);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0.3;
+                transform: scale(0.95) translateY(20px);
+                filter: blur(4px);
+            }
+        }
+
+        .animate-timeline {
+            position: relative;
+            animation: scrollIn cubic-bezier(0.16, 1, 0.3, 1) both,
+                      fadeOut ease-out both;
+            animation-timeline: view();
+            animation-range: 10vh 60vh, exit 0vh;
+            transform-origin: center;
+            will-change: transform, opacity, filter;
+        }
+
+        @supports not (animation-timeline: view()) {
+            .animate-timeline {
+                animation: scrollIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                opacity: 0;
+            }
+        }
+
+        .animate-timeline.stagger-1 { animation-delay: 0.1s; }
+        .animate-timeline.stagger-2 { animation-delay: 0.2s; }
+        .animate-timeline.stagger-3 { animation-delay: 0.3s; }
+        .animate-timeline.stagger-4 { animation-delay: 0.4s; }
+
+        .animate-timeline {
+            contain: layout style paint;
+        }
+
+        
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&subset=latin-ext');
+
+        .popup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, .80);
+            z-index: 9999;
+            visibility: hidden;
+            opacity: 0;
+            overflow: hidden;
+            transition: .64s ease-in-out;
+        }
+
+        .popup-inner {
+            position: relative;
+            bottom: -100vw;
+            right: -100vh;
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            max-height: 900px;
+            width: 80%;
+            height: 85%;
+            background-color: #fff;
+            transform: rotate(32deg);
+            transition: .64s ease-in-out;
+        }
+
+        .popup__photo {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 40%;
+            height: 100%;
+            overflow: hidden;
+            img, video {
+                width: auto;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .popup-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .popup-video:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                rgba(145, 145, 233, 0.1) 0%,
+                rgba(0,0,0,0.2) 50%,
+                rgba(145, 145, 233, 0.1) 100%);
+            border-radius: 15px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Video container enhancement */
+        .popup__photo {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .popup__photo::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #f0efa8);
+            border-radius: 17px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup__photo:hover::before {
+            opacity: 0.8;
+        }
+
+        .popup__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 60%;
+            height: 100%;
+            padding: 4rem;
+            h1 {
+                font-size: 2rem;
+                font-weight: 600;
+                margin-bottom: 2rem;
+                text-transform: uppercase;
+                color: #0A0A0A;
+            }
+            p {
+                font-size: .875rem;
+                color: #686868;
+                line-height: 1.5;
+            }
+        }
+
+        .popup:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup:target .popup-inner {
+            bottom: 0;
+            right: 0;
+            transform: rotate(0);
+        }
+
+        .popup__close {
+            position: absolute;
+            right: -1rem;
+            top: -1rem;
+            width: 3rem;
+            height: 3rem;
+            font-size: .875rem;
+            font-weight: 300;
+            border-radius: 100%;
+            background-color: #0A0A0A;
+            z-index: 4;
+            color: #fff;
+            line-height: 3rem;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .popup-inner {
+                flex-direction: column;
+                width: 90%;
+                height: 90%;
+                max-width: none;
+                max-height: none;
+            }
+
+            .popup__photo, .popup__text {
+                width: 100%;
+                height: 50%;
+            }
+
+            .popup__text {
+                padding: 2rem;
+                h1 {
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/80 backdrop-blur-lg px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter text-blue-500">MT TEAM</div>
+        <div class="flex items-center gap-4">
+            <div class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-gray-400 font-bold">
+                <a href="#work" class="hover:text-blue-500 transition">Work</a>
+                <a href="#why" class="hover:text-blue-500 transition">Why Us</a>
+                <a href="#tech" class="hover:text-blue-500 transition">Tech</a>
+                <a href="#testimonials" class="hover:text-blue-500 transition">Testimonials</a>
+                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Hire Us</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white text-xl">☰</button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden fixed top-16 left-0 w-full bg-black/95 backdrop-blur-lg z-40 py-4 flex flex-col items-center gap-4 text-xs uppercase tracking-widest text-gray-400 font-bold">
+        <a href="#work" class="hover:text-blue-500 transition">Work</a>
+        <a href="#why" class="hover:text-blue-500 transition">Why Us</a>
+        <a href="#tech" class="hover:text-blue-500 transition">Tech</a>
+        <a href="#testimonials" class="hover:text-blue-500 transition">Testimonials</a>
+        <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Hire Us</a>
+    </div>
+
+    <section class="relative min-h-screen flex flex-col justify-center items-center px-6 overflow-hidden hero-gradient">
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover opacity-10" src="1.webm"></video>
+        <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none" id="hero-mesh"></div>
+        
+        <h1 id="hero-title" class="text-6xl md:text-[120px] font-black text-center leading-[0.9] tracking-tighter opacity-0 translate-y-20">
+            WE BUILD <br> <span class="text-blue-600 text-glow">DIGITAL ELITE.</span>
+        </h1>
+        
+        <p id="hero-sub" class="mt-8 text-gray-400 text-center max-w-xl text-lg opacity-0">
+            Specialized in high-performance Front-End experiences. Clean code, instant speeds, and pixel-perfect execution.
+        </p>
+
+        <div id="hero-btn" class="mt-12 opacity-0">
+            <a href="#work" class="bg-white text-black px-10 py-5 rounded-full font-black text-xl hover:scale-105 transition-transform inline-block">
+                See Our Work
+            </a>
+        </div>
+    </section>
+
+    <section id="work" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-sm uppercase tracking-[0.5em] text-blue-500 mb-10 text-center animate-timeline">Featured Project</h2>
+
+        <div class="grid gap-8 md:grid-cols-1 lg:grid-cols-2 mb-8">
+            <a href="#popup-zinnia" class="glass-card rounded-[40px] overflow-hidden border border-white/10 group cursor-pointer reveal animate-timeline stagger-1">
+                <div class="aspect-video bg-blue-900/20 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition"></div>
+                    <span class="text-4xl font-black opacity-20 group-hover:opacity-60 transition text-center px-4">ZINNIA BIJOUTERIE</span>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-4xl font-bold">Zinnia – Premium E-commerce</h3>
+                    <p class="text-gray-400 mt-4 text-xl">A lightning-fast shopping experience tailored for elegance. Built with the same precision we bring to every line of code.</p>
+                </div>
+            </a>
+
+            <a href="#popup-alpha" class="glass-card rounded-[40px] overflow-hidden border border-white/10 group cursor-pointer reveal animate-timeline stagger-2">
+                <div class="aspect-video bg-blue-900/20 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-600/10 group-hover:bg-transparent transition"></div>
+                    <span class="text-4xl font-black opacity-20 group-hover:opacity-60 transition text-center px-4">worKing......</span>
+                </div>
+                <div class="p-10">
+                    <h3 class="text-4xl font-bold">Let's start worKing on it together</h3>
+                    <p class="text-gray-400 mt-4 text-xl">Let's commence our collaboration on this project.</p>
+                </div>
+            </a>
+        </div>
+
+        <div id="additional-projects" class="hidden">
+            <div class="grid gap-8 md:grid-cols-1 lg:grid-cols-3 mt-8">
+                <a href="#popup-ecommerce" class="glass-card rounded-[40px] overflow-hidden border border-white/10 group cursor-pointer reveal animate-timeline stagger-3">
+                    <div class="aspect-video bg-purple-900/20 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-purple-600/10 group-hover:bg-transparent transition"></div>
+                        <span class="text-4xl font-black opacity-20 group-hover:opacity-60 transition text-center px-4">worKing......</span>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-4xl font-bold">Let's start worKing on it together</h3>
+                        <p class="text-gray-400 mt-4 text-xl">Let's commence our collaboration on this project.</p>
+                    </div>
+                </a>
+
+                <a href="#popup-mobile" class="glass-card rounded-[40px] overflow-hidden border border-white/10 group cursor-pointer reveal animate-timeline stagger-4">
+                    <div class="aspect-video bg-green-900/20 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-green-600/10 group-hover:bg-transparent transition"></div>
+                        <span class="text-4xl font-black opacity-20 group-hover:opacity-60 transition text-center px-4">worKing......</span>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-4xl font-bold">Let's start worKing on it together</h3>
+                        <p class="text-gray-400 mt-4 text-xl">Let's commence our collaboration on this project.</p>
+                    </div>
+                </a>
+
+                <a href="#popup-brand" class="glass-card rounded-[40px] overflow-hidden border border-white/10 group cursor-pointer reveal animate-timeline stagger-1">
+                    <div class="aspect-video bg-red-900/20 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-red-600/10 group-hover:bg-transparent transition"></div>
+                        <span class="text-4xl font-black opacity-20 group-hover:opacity-60 transition text-center px-4">BRAND IDENTITY</span>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-4xl font-bold">Let's start worKing on it together</h3>
+                        <p class="text-gray-400 mt-4 text-xl">Let's commence our collaboration on this project.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-16">
+            <button id="see-more-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <span id="see-more-text">See More Projects</span>
+                <i id="see-more-icon" class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+            </button>
+        </div>
+    </section>
+
+    <section id="why" class="py-32 bg-[#141414]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-black mb-20 text-center">Why Choose MT Team?</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" >
+                <div class="glass-card p-10 rounded-3xl border border-white/5 hover:border-blue-500/50 transition-all duration-300 animate-slide-left stagger-1 why-card">
+                    <div class=" text-blue-500 text-3xl mb-6 group-icon fa-solid fa-gauge-high"></div>
+                    <h4 class="text-xl font-bold mb-4">Fast Performance</h4>
+                    <p class="text-gray-400 text-sm">SPA sites for instant, no-refresh loading experience.</p>
+                </div>
+                <div class="glass-card p-10 rounded-3xl border border-white/5 hover:border-blue-500/50 transition-all duration-300 animate-float-in stagger-2 why-card">
+                    <div class="text-blue-500 text-3xl mb-6 group-icon fa-solid fa-sitemap"></div>
+                    <h4 class="text-xl font-bold mb-4">Clean Code</h4>
+                    <p class="text-gray-400 text-sm">Organized, maintainable architecture built from scratch.</p>
+                </div>
+                <div class="glass-card p-10 rounded-3xl border border-white/5 hover:border-blue-500/50 transition-all duration-300 animate-slide-right stagger-3 why-card">
+                    <div class="text-blue-500 text-3xl mb-6 group-icon fa-brands fa-sketch"></div>
+                    <h4 class="text-xl font-bold mb-4">Modern UI</h4>
+                    <p class="text-gray-400 text-sm">Interactive interfaces designed to captivate your audience.</p>
+                </div>
+                <div class="glass-card p-10 rounded-3xl border border-white/5 hover:border-blue-500/50 transition-all duration-300 animate-morph stagger-4 why-card">
+                    <div class="text-blue-500 text-3xl mb-6 group-icon fa-solid fa-hand-holding-dollar"></div>
+                    <h4 class="text-xl font-bold mb-4">Fair Pricing</h4>
+                    <p class="text-gray-400 text-sm">High-end quality at a competitive Moroccan price point.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="py-32 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-black mb-20 text-center animate-timeline">Technologies We Master</h2>
+
+       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 px-4">
+
+    <div class="group relative p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-blue-500/50 transition-all duration-500 text-center reveal overflow-hidden animate-timeline stagger-1">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-3xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+
+        <div class="relative">
+            <div class="text-blue-400 text-5xl mb-4 group-hover:scale-110 transition-transform duration-500">
+                <i class="fa-brands fa-react"></i>
+            </div>
+            <h4 class="text-lg font-bold tracking-tight text-white/90">React</h4>
+        </div>
+    </div>
+
+    <div class="group relative p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-yellow-500/50 transition-all duration-500 text-center reveal overflow-hidden animate-timeline stagger-2">
+        <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-400 rounded-3xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+
+        <div class="relative">
+            <div class="text-yellow-400 text-5xl mb-4 group-hover:scale-110 transition-transform duration-500">
+                <i class="fa-brands fa-js"></i>
+            </div>
+            <h4 class="text-lg font-bold tracking-tight text-white/90">JavaScript</h4>
+        </div>
+    </div>
+
+    <div class="group relative p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-orange-500/50 transition-all duration-500 text-center reveal overflow-hidden animate-timeline stagger-3">
+        <div class="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-500 rounded-3xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+
+        <div class="relative">
+            <div class="text-orange-500 text-5xl mb-4 group-hover:scale-110 transition-transform duration-500">
+                <i class="fa-brands fa-html5"></i>
+            </div>
+            <h4 class="text-lg font-bold tracking-tight text-white/90">html-HTML5</h4>
+        </div>
+    </div>
+
+    <div class="group relative p-8 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-blue-400/50 transition-all duration-500 text-center reveal overflow-hidden animate-timeline stagger-4">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+
+        <div class="relative">
+            <div class="text-blue-400 text-5xl mb-4 group-hover:scale-110 transition-transform duration-500">
+                <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <h4 class="text-lg font-bold tracking-tight text-white/90">CSS3</h4>
+        </div>
+    </div>
+
+</div>
+            </div>
+        </div>
+    </section>
+
+<section id="contact" class="py-24 md:py-40 text-center px-6 relative overflow-hidden animate-timeline">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent -z-10"></div>
+
+    <h2 class="text-5xl md:text-7xl font-black tracking-tighter reveal mb-6 animate-timeline">
+        Ready to start?
+    </h2>
+
+    <p class="text-gray-400 max-w-xl mx-auto text-lg md:text-xl leading-relaxed reveal animate-timeline">
+        Quality speaks in silence. Let's discuss your vision directly via
+        <span class="text-white font-medium">WhatsApp</span> or
+        <span class="text-white font-medium">Instagram</span>.
+    </p>
+
+    <div class="mt-12 flex flex-wrap justify-center gap-6 reveal">
+        <a href="https://wa.me/212635469650"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contact us on WhatsApp"
+           class="group bg-[#25D366] text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_30px_rgba(37,211,102,0.3)] flex items-center gap-3">
+           <i class="fa-brands fa-whatsapp text-2xl"></i>
+           <span>WhatsApp</span>
+        </a>
+
+        <a href="https://www.instagram.com/mt__team_/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Follow us on Instagram"
+           class="group bg-[#E4405F] text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_10px_30px_rgba(228,64,95,0.3)] flex items-center gap-3">
+           <i class="fa-brands fa-instagram text-2xl"></i>
+           <span>Instagram</span>
+        </a>
+    </div>
+</section>
+
+    <div id="popup-zinnia" class="popup">
+        <div class="popup-inner">
+            <div class="popup__photo">
+                <video id="zinnia-video" autoplay muted loop playsinline class="popup-video" preload="metadata" controls style="width: 100%; height: 100%; object-fit: cover; background: #000;">
+                    <source src="1v.webm" type="video/webm">
+                    <source src="1v.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="popup__text">
+                <h1>Zinnia Bijouterie</h1>
+                <p>A premium e-commerce platform for luxury jewelry. Features include advanced product filtering, secure payment processing, customer reviews, and a sophisticated admin dashboard for inventory management.</p>
+            </div>
+            <a href="#work" class="popup__close">×</a>
+        </div>
+    </div>
+
+    <div id="popup-alpha" class="popup">
+        <div class="popup-inner">
+            <div class="popup__photo">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="Project Alpha" loading="lazy">
+            </div>
+            <div class="popup__text">
+                <h1>Let's start worKing on it together</h1>
+                <p>Let's commence our collaboration on this project.</p>
+            </div>
+            <a href="#work" class="popup__close">×</a>
+        </div>
+    </div>
+
+    <div id="popup-ecommerce" class="popup">
+        <div class="popup-inner">
+            <div class="popup__photo">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600" alt="E-Commerce Pro" loading="lazy">
+            </div>
+            <div class="popup__text">
+                <h1>Let's start worKing on it together</h1>
+                <p>Let's commence our collaboration on this project.</p>
+            </div>
+            <a href="#work" class="popup__close">×</a>
+        </div>
+    </div>
+
+    <div id="popup-mobile" class="popup">
+        <div class="popup-inner">
+            <div class="popup__photo">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600" alt="Mobile App UI" loading="lazy">
+            </div>
+            <div class="popup__text">
+                <h1>Let's start worKing on it together</h1>
+                <p>Let's commence our collaboration on this project.</p>
+            </div>
+            <a href="#work" class="popup__close">×</a>
+        </div>
+    </div>
+
+    <div id="popup-brand" class="popup">
+        <div class="popup-inner">
+            <div class="popup__photo">
+                <img src="https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=600" alt="Brand Identity" loading="lazy">
+            </div>
+            <div class="popup__text">
+                <h1>Brand Identity</h1>
+                <p>Complete brand identity system including logo design, color palette development, typography selection, and comprehensive brand guidelines for consistent visual communication.</p>
+            </div>
+            <a href="#work" class="popup__close">×</a>
+        </div>
+    </div>
+
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg opacity-0 transition-opacity" style="display: none;">↑</button>
+
+    <div class="noise-overlay"></div>
+
+    <footer class="py-10 border-t border-white/5 text-center text-gray-600 text-xs tracking-widest bg-[#eeeeee]">
+        © 2025 MT TEAM. FRONT-END SPECIALISTS. MOROCCO 🇲🇦 | Created by MT_TEAM
+
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const tl = gsap.timeline();
+            tl.to("#hero-title", { opacity: 1, y: 0, duration: 1, ease: "power4.out" })
+              .to("#hero-sub", { opacity: 1, duration: 0.8 }, "-=0.5")
+              .to("#hero-btn", { opacity: 1, scale: 1, duration: 0.5 }, "-=0.3");
+
+            gsap.to("#hero-title", {
+                y: -100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            gsap.to("#hero-sub", {
+                y: -50,
+                opacity: 0,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            gsap.to("video", {
+                y: 100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            gsap.utils.toArray(".reveal").forEach(elem => {
+                gsap.fromTo(elem,
+                    { opacity: 0, y: 50 },
+                    {
+                        opacity: 1, y: 0, duration: 1,
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+
+            gsap.utils.toArray(".why-card").forEach((elem, index) => {
+                gsap.fromTo(elem,
+                    { opacity: 0, y: 50 },
+                    {
+                        opacity: 1, y: 0, duration: 0.8, delay: index * 0.2,
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 85%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'block';
+                backToTopBtn.style.opacity = '1';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                setTimeout(() => backToTopBtn.style.display = 'none', 300);
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Video handling - ensure it plays when popup opens
+        const zinniaVideo = document.querySelector('#popup-zinnia video');
+
+        if (zinniaVideo) {
+            // Add debugging for video loading
+            zinniaVideo.addEventListener('loadstart', () => console.log('Video loadstart'));
+            zinniaVideo.addEventListener('loadeddata', () => console.log('Video loadeddata'));
+            zinniaVideo.addEventListener('canplay', () => console.log('Video canplay'));
+            zinniaVideo.addEventListener('error', (e) => console.log('Video error:', e));
+
+            // Force video to play when popup becomes visible
+            const popupObserver = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                        const popup = document.getElementById('popup-zinnia');
+                        if (popup && getComputedStyle(popup).visibility === 'visible') {
+                            // Try to play video
+                            zinniaVideo.play().then(() => {
+                                console.log('Video started playing');
+                            }).catch(function(error) {
+                                console.log('Video autoplay failed:', error);
+                            });
+                        }
+                    }
+                });
+            });
+
+            popupObserver.observe(document.getElementById('popup-zinnia'), {
+                attributes: true,
+                attributeFilter: ['style']
+            });
+
+            fetch('1v.mp4', { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Video file exists and is accessible');
+                    } else {
+                        console.log('Video file not found or not accessible');
+                    }
+                })
+                .catch(error => {
+                    console.log('Error checking video file:', error);
+                });
+        }
+
+        class WorkSectionManager {
+            constructor() {
+                this.seeMoreBtn = document.getElementById('see-more-btn');
+                this.seeMoreText = document.getElementById('see-more-text');
+                this.seeMoreIcon = document.getElementById('see-more-icon');
+                this.additionalProjects = document.getElementById('additional-projects');
+                this.workSection = document.getElementById('work');
+                this.isExpanded = false;
+                this.animationDuration = {
+                    show: 600,
+                    hide: 400
+                };
+                this.easing = {
+                    show: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    hide: 'cubic-bezier(0.4, 0, 1, 1)'
+                };
+
+                this.init();
+            }
+
+            init() {
+                if (this.seeMoreBtn) {
+                    this.seeMoreBtn.addEventListener('click', this.handleToggle.bind(this));
+                }
+
+                // Add keyboard support
+                if (this.seeMoreBtn) {
+                    this.seeMoreBtn.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            this.handleToggle();
+                        }
+                    });
+                }
+
+                // Add ARIA attributes for accessibility 39AL a sat 
+                this.updateAriaAttributes();
+            }
+
+            handleToggle() {
+                this.isExpanded = !this.isExpanded;
+                this.animateToggle();
+                this.updateButtonState();
+                this.updateAriaAttributes();
+
+                // Dispatch custom event for potential listeners
+                const event = new CustomEvent('workSectionToggled', {
+                    detail: { expanded: this.isExpanded }
+                });
+                document.dispatchEvent(event);
+            }
+
+            animateToggle() {
+                if (this.isExpanded) {
+                    this.showAdditionalProjects();
+                } else {
+                    this.hideAdditionalProjects();
+                }
+            }
+
+            showAdditionalProjects() {
+                // HTML-like animation sequence for showing sa7bi
+                this.additionalProjects.classList.remove('hidden');
+                this.additionalProjects.style.opacity = '0';
+                this.additionalProjects.style.transform = 'translateY(30px) scale(0.95)';
+
+                requestAnimationFrame(() => {
+                    this.additionalProjects.style.transition = `all ${this.animationDuration.show}ms ${this.easing.show}`;
+                    this.additionalProjects.style.opacity = '1';
+                    this.additionalProjects.style.transform = 'translateY(0) scale(1)';
+
+                    this.triggerGsapAnimations();
+
+                    setTimeout(() => {
+                        this.scrollToAdditionalProjects();
+                    }, 300);
+                });
+            }
+
+            hideAdditionalProjects() {
+                this.additionalProjects.style.transition = `all ${this.animationDuration.hide}ms ${this.easing.hide}`;
+                this.additionalProjects.style.opacity = '0';
+                this.additionalProjects.style.transform = 'translateY(-30px) scale(0.95)';
+
+                setTimeout(() => {
+                    this.additionalProjects.classList.add('hidden');
+                    // Reset styles for next show
+                    this.additionalProjects.style.transition = '';
+                    this.additionalProjects.style.transform = '';
+                }, this.animationDuration.hide);
+            }
+
+            updateButtonState() {
+                const newText = this.isExpanded ? 'See Less Projects' : 'See More Projects';
+                const newRotation = this.isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+
+                this.seeMoreText.textContent = newText;
+                this.seeMoreIcon.style.transform = newRotation;
+
+                this.seeMoreBtn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.seeMoreBtn.style.transform = '';
+                }, 150);
+            }
+
+            updateAriaAttributes() {
+                if (this.seeMoreBtn) {
+                    this.seeMoreBtn.setAttribute('aria-expanded', this.isExpanded);
+                    this.seeMoreBtn.setAttribute('aria-label',
+                        this.isExpanded ? 'Hide additional projects' : 'Show additional projects'
+                    );
+                }
+
+                if (this.additionalProjects) {
+                    this.additionalProjects.setAttribute('aria-hidden', !this.isExpanded);
+                }
+            }
+
+            triggerGsapAnimations() {
+                if (typeof gsap !== 'undefined') {
+                    gsap.utils.toArray("#additional-projects .reveal").forEach((elem, index) => {
+                        gsap.fromTo(elem,
+                            { opacity: 0, y: 50, scale: 0.9 },
+                            {
+                                opacity: 1, y: 0, scale: 1,
+                                duration: 0.8,
+                                delay: index * 0.1,
+                                ease: "power2.out",
+                                scrollTrigger: {
+                                    trigger: elem,
+                                    start: "top 85%",
+                                    toggleActions: "play none none none"
+                                }
+                            }
+                        );
+                    });
+                }
+            }
+
+            scrollToAdditionalProjects() {
+                const elementTop = this.additionalProjects.getBoundingClientRect().top;
+                const absoluteTop = elementTop + window.pageYOffset;
+                const offset = 100; 
+
+                window.scrollTo({
+                    top: absoluteTop - offset,
+                    behavior: 'smooth'
+                });
+            }
+
+            expand() {
+                if (!this.isExpanded) {
+                    this.handleToggle();
+                }
+            }
+
+            collapse() {
+                if (this.isExpanded) {
+                    this.handleToggle();
+                }
+            }
+
+            toggle() {
+                this.handleToggle();
+            }
+
+            getState() {
+                return {
+                    expanded: this.isExpanded,
+                    hasAdditionalProjects: !!this.additionalProjects,
+                    buttonText: this.seeMoreText ? this.seeMoreText.textContent : null
+                };
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.workSectionManager = new WorkSectionManager();
+        });
+
+        if (!document.addEventListener) {
+            window.onload = function() {
+                window.workSectionManager = new WorkSectionManager();
+            };
+            // By MT Team
+        }
+    </script>
+</body>
+</html>
